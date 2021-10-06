@@ -65,3 +65,34 @@ def evaluate(trn_y, trn_preds, tst_y, tst_preds):
     
     sm.qqplot(tst_residuals, line = 'r', ax=ax3)
     ax3.set_title('Testing Residuals', y=1.0, pad=-14)
+
+def model_predict(trn_data, features, target, tst_data):
+    """
+    Fit a linear regression model to the data given features and a target.
+    
+    Inputs:
+        data: pandas DataFrame
+            The DataFrame storing the training data.
+        features: list of strings
+            The list of feature names.
+        target: string
+            The name of the target.
+            
+    Outputs:
+        trn_preds: pandas Series
+            Training predictions for target.
+        tst_preds: pandas Series
+            Testing predicitons for target.
+    """
+    
+    # fit the linear regression model
+    model = sm.OLS(endog=trn_data[target], exog=sm.add_constant(trn_data[features])).fit()
+    
+    # show the summary
+    display(model.summary())
+    
+    # calculate train and test predictions
+    trn_preds = model.predict(sm.add_constant(trn_data[features]))
+    tst_preds = model.predict(sm.add_constant(tst_data[features]))
+    
+    return trn_preds, tst_preds
