@@ -6,9 +6,9 @@ This project focuses on home sales in King County Washington. We looked at infor
 
 **Business and Data Understanding**
 
-When considering whether to flip a home or not we'll consider how to choose a home, what features of a home you need to consider when purchasing and selling a home that you've flipped, and what actions to take to increase the profitability of a flipped home. 
+When considering whether to flip a home or not we'll consider how to choose a home, what features of a home to consider when purchasing and selling a home that's been flipped, and what actions to take to increase the profitability of a flipped home. 
 
-**Explain your stakeholder audience here**
+**Stakeholder Audience**
 
 Our Stakeholders are individuals looking for a home to purchase to flip or individuals who own a home that they've flipped. This project looks at how to choose a home, what features to consider, and what action to take with the predictions of the final model. 
 
@@ -20,6 +20,7 @@ Initial Exploration:
 
 - Square footage of a home has the highest correlation to price. 
 - Homes with basements sell at a higher price on average. 
+- Square footage of homes is heavily right skewed showing most homes under 4,000 square feet, so we exclude homes above this amount of square footage. We transform our price column using a natural logaritm to create a more normally distributed target. 
 
 Baseline Model: 
 
@@ -28,7 +29,7 @@ The baseline model has one feature fed into the model, the square footage of the
 Feature Engineering: 
 
 - Created a new column for age of a home when sold. We did this by subtracting the year the home was built by the year the home was sold. 
-- Created a categorical column for home condition that assigns a number, 0, 1, 2, 3, 4, to the condition, Poor, Fair, Average, Good, Very Good
+- Created a categorical column for home condition that assigns a number, 0, 1, 2, 3, 4, to the condition, Poor, Fair, Average, Good, Very Good, respectively. 
 - Created a new column representing the ratio of the size of a home compared to the neighbors that compares the sqft_living column to the sqft_living15 column. 
 - Created a column for homes that have or don't have basements. Assigned 0 to homes without basements and 1 to homes with basements. 
 
@@ -40,21 +41,29 @@ Our final model includes our original baseline feature, square footage of the ho
 
 Training Metrics: 
 - R2: 0.463
-- MSE: $138,864.70
+- MAE: $138,864.70
 - RMSE: $199,044.46
 
 Testing Metrics: 
 - R2: 0.450
-- MSE: $138,978.64
+- MAE: $138,978.64
 - RMSE: $197,395.59
 
 Coefficients: 
 
-- sqft_living           1.886725
-- ratio_sqft_living     0.683970
-- home_age_when_sold    0.344939
-- condition_rank        0.089316
-- has_basement          0.076994
+- sqft_living:           1.886725
+- ratio_sqft_living:     0.683970
+- home_age_when_sold:    0.344939
+- condition_rank:        0.089316
+- has_basement:          0.076994
+
+Therefore, according to our model, holding all other features constant, an additional 12x12 ft room (average size of an addition to a home) results in a 7.77% increase in the price.
+
+A one unit increase in ratio_sqft_living means going from 0.5 to 1.5 for example, or half the size of your neighbors to 1.5 times the size of your neighbors. According to our model, this change results in a 31.43% decrease in price, holding all other features constant. So, homes appear to be priced higher when they are smaller rather than larger than their neighbors, all else equal.
+
+Having a basement vs not having one results in an 8% increase in sale price.
+
+A one unit change in condition_rank means going up one level from one rating to the next (e.g. poor to fair, or average to good). A limitation of our model is the assumption that these intervals are equivalent when they may not be. According to our model, jumping up one rating results in a 2.26% increase in price, holding other features constant.
 
 The final model resulted in price predictions that were off by $139,000 on average. When holding all other features constant, an increase of 100 square feet results in a 5% increase in sale price, having a basement results in an 8% increase in sale price, and improving the condition of a home from poor to good results in a 7% increase in sale price. 
 
