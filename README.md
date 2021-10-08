@@ -75,7 +75,7 @@ Recommendations:
 
 **Conclusion**
 
-The final model is wrong, but useful. The results from the model are encouraging for further work on improving this model. A flaw of the data is that it's encompassing all of King County Washington. The area of Washington covered in this data is large and has many different types of neighborhoods that have many different features that may affect home prices. A home in the city center of Seattle might have near identical features to a home in a suburb of Seattle, but has drastically different sale prices. This may present an error when predicting sale price. 
+The final model is wrong, but useful. The results from the model are encouraging for further work on improving this model. A flaw of the data is that it's encompassing all of King County Washington. The area of Washington covered in this data is large and has many different types of neighborhoods that have many different features that may affect home prices. A home in the city center of Seattle might have near identical features to a home in a suburb of Seattle, but has drastically different sale prices. This may present an issue when predicting sale price. 
 
 Future Work: 
 
