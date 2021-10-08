@@ -10,7 +10,7 @@ When considering whether to flip a home or not we'll consider how to choose a ho
 
 **Stakeholder Audience**
 
-Our Stakeholders are individuals looking for a home to purchase to flip or individuals who own a home that they've flipped. This project looks at how to choose a home, what features to consider, and what action to take with the predictions of the final model. 
+Our Stakeholders are individuals looking for a home to purchase to flip or individuals who own a home they'd like to flip. This project looks at how to choose a home, what features to consider, and what action to take with the predictions of the final model. 
 
 **Modeling**
 
