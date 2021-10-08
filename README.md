@@ -88,7 +88,7 @@ Future Work:
 
 **Presentation Link:** 
 
-[Presentation Link](https://github.com/JenSans/Housing-Project/blob/main/presentation.pdf)
+[Presentation](https://github.com/JenSans/Housing-Project/blob/main/presentation.pdf)
 
 **Repository Navigation**
 
