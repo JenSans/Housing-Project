@@ -34,28 +34,47 @@ Feature Engineering:
 
 Final Model: 
 
-Our final model includes our original baseline feature sqft_living, age of the home when sold, condition ranking of the home, ratio of the size of the home compared to the nearest 15 neighbors, and homes with and without basements. 
+Our final model includes our original baseline feature, square footage of the home, age of the home when it sold, condition ranking of the home, ratio of the size of the home compared to the nearest 15 neighbors, and homes with and without basements. 
 
 **Regression Results**
 
-- Log transform 
-- Coefficients 
-- R2
-- MSE
-- RMSE
+Training Metrics: 
+- R2: 0.463
+- MSE: $138,864.70
+- RMSE: $199,044.46
 
-The final model resulted in price predictions that were off by $150,000 on average. When holding all other features constant, an increase of 100 square feet results in a 5% increase in sale price, having a basement results in 7% increase in sale price, and improving the condition of a home from poor to good results in a 7% increase in sale price. 
+Testing Metrics: 
+- R2: 0.450
+- MSE: $138,978.64
+- RMSE: $197,395.59
+
+Coefficients: 
+
+- sqft_living           1.886725
+- ratio_sqft_living     0.683970
+- home_age_when_sold    0.344939
+- condition_rank        0.089316
+- has_basement          0.076994
+
+The final model resulted in price predictions that were off by $139,000 on average. When holding all other features constant, an increase of 100 square feet results in a 5% increase in sale price, having a basement results in an 8% increase in sale price, and improving the condition of a home from poor to good results in a 7% increase in sale price. 
+
+Recommendations: 
+
+- Compare the cost of a 100 sqft addition to a home to a 5% increase in home price to see if this is profitable for the flip. 
+- When comparing similar homes and their potential for flipping, if one has a basement and the other does not, consider purchasing and flipping the home that has the basement. 
+- Consider purchasing a home in poor condition and upgrading its condition to good. 
 
 **Conclusion**
 
-To conclude, the final model is wrong, but useful. The results from the model are encouraging for further work on improving this model. A flaw of the data is that it's encompassing all of King County Washington. The area of Washington covered in this data is large and has many different types of neighborhoods that have many different features that may affect home prices. A home in the city center of Seattle might have near identical features to a home in a suburb of Seattle, but has drastically different sale prices. This may present an error when predicting sale price. 
+The final model is wrong, but useful. The results from the model are encouraging for further work on improving this model. A flaw of the data is that it's encompassing all of King County Washington. The area of Washington covered in this data is large and has many different types of neighborhoods that have many different features that may affect home prices. A home in the city center of Seattle might have near identical features to a home in a suburb of Seattle, but has drastically different sale prices. This may present an error when predicting sale price. 
 
 Future Work: 
 
-- Whether average income of the residents in a neighborhood. 
+- Research how average income of the residents in a neighborhood affects price.  
 - How school systems may affect price if they're blue ribbon schools or if they're poorly rated schools. 
 - Whether the safety rating of a neighborhood affects sale price. 
 
+```
 **Repository Navigation**
 ├── README.md                    <- The top-level README for reviewers of this project. 
 ├── data                         <- Sourced externally and generated from code. 
@@ -64,4 +83,4 @@ Future Work:
 ├── HouseSales.ipynb             <- Final Jupyter notebook for this project, containing a combined, final model of the information form both Jen and Andrew Jupyter notebooks. 
 ├── presentation.pdf             <- PDF of the presentation slides for this project. 
 └── utils.py                     <- .py folder containing three functions for evaluating linear regression models in Jupyter Notebooks throughout this repository. 
-                     
+```
