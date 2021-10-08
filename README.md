@@ -57,6 +57,9 @@ Coefficients:
 - condition_rank:        0.089316
 - has_basement:          0.076994
 
+All P-Values came out to 0 in the final model, telling us that association between price and the chosen features (sqft_living, ratio_sqft_living, home_age_when_sold, condition_rank, has_basement) is statistically significant.
+
+
 According to our model, holding all other features constant, an additional 12x12 ft room (average size of an addition to a home) results in a 7.77% increase in the price.
 
 A one unit increase in ratio_sqft_living means going from 0.5 to 1.5 for example, or half the size of your neighbors to 1.5 times the size of your neighbors. According to our model, this change results in a 31.43% decrease in price, holding all other features constant. So, homes appear to be priced higher when they are smaller rather than larger than their neighbors, all else equal.
