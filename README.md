@@ -49,7 +49,7 @@ Testing Metrics:
 - MAE: $138,978.64
 - RMSE: $197,395.59
 
-Coefficients: 
+Coefficients (MinMax Scaled): 
 
 - sqft_living:           1.886725
 - ratio_sqft_living:     0.683970
