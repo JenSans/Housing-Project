@@ -74,8 +74,9 @@ Future Work:
 - How school systems may affect price if they're blue ribbon schools or if they're poorly rated schools. 
 - Whether the safety rating of a neighborhood affects sale price. 
 
-```
 **Repository Navigation**
+
+```
 ├── README.md                    <- The top-level README for reviewers of this project. 
 ├── data                         <- Sourced externally and generated from code. 
 ├── notebooks                    <- Folder containing Jen and Andrew Jupyter Notebooks housing individual work for this project. 
