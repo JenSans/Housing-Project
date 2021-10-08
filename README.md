@@ -89,7 +89,7 @@ Future Work:
 ├── README.md                    <- The top-level README for reviewers of this project. 
 ├── data                         <- Sourced externally and generated from code. 
 ├── notebooks                    <- Folder containing Jen and Andrew Jupyter Notebooks housing individual work for this project. 
-├── .gitignore                   <- Third Jupyter notebook. Linear regression models, evaluations, results.
+├── .gitignore                   <- Plain text file where each line contains a pattern for files/directories to ignore.
 ├── HouseSales.ipynb             <- Final Jupyter notebook for this project, containing a combined, final model of the information form both Jen and Andrew Jupyter notebooks. 
 ├── presentation.pdf             <- PDF of the presentation slides for this project. 
 └── utils.py                     <- .py folder containing three functions for evaluating linear regression models in Jupyter Notebooks throughout this repository. 
